@@ -1,7 +1,7 @@
 /* CSS for website */
 h1 , h2{
-    border-bottom: 1px solid #EFEAEA;
-    padding-bottom: 3px;
+    border-bottom: 1px solid #a28585;
+    padding-bottom: 2px;
 }
 .markdown-section>:first-child {
     margin-top: 0!important;
@@ -17,7 +17,7 @@ h1 , h2{
 .book .book-body .page-wrapper .page-inner section.normal hr {
     height: 0px;
     padding: 0;
-    margin: 1.7em 0;
+    margin: 1.2em 0;
     overflow: hidden;
     background-color: #e7e7e7;
     border-bottom: 1px dotted #e7e7e7;
@@ -30,18 +30,19 @@ h1 , h2{
 
 pre[class*="language-"] {
     border: none;
-    background-color: #f7f7f7;
+    background-color: #cecece;
     font-size: 1.2em;
     line-height: 1.1em;
+	font-family:  "ubuntu", "Tahoma", "Microsoft YaHei";
 }
 
 .book .book-body .page-wrapper .page-inner section.normal {
     font-size: 16px;
-    font-family:  "ubuntu", "Tahoma", "Microsoft YaHei";
+    font-family: 'Helvetica Neue',Helvetica,Arial,'Microsoft YaHei',sans-serif;
 }
 
 .aceCode {
-  font-size: 12px !important;
+  font-size: 14px !important;
 }
 
 input[type=checkbox]{
