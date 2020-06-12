@@ -11,10 +11,10 @@ import numpy as np
 
 rng = np.random.RandomState(0)
 rng.rand(4)
-Out[377]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])
+# Out[377]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])
 rng = np.random.RandomState(0)
 rng.rand(4)
-Out[379]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])
+# Out[379]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])
 ```
 
 0为随机种子，只要随机种子seed相同，产生的随机数序列就相同
@@ -357,3 +357,6 @@ Out[6]: array([ 2.74315143,  9.4701426 ])
 <a href="http://doc.codingdict.com/NumPy_v111/reference/routines.random.html" blank="">随机抽样</a> 
 
 <a href="https://blog.csdn.net/lanchunhui/article/details/50163669" blank="">从np.random.normal()到正态分布的拟</a>  
+
+
+

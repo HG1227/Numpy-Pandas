@@ -4,14 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Numpy 上三角矩阵triu和下三角矩阵tril · GitBook 使用教程</title>
+        <title>Numpy 上三角矩阵triu和下三角矩阵tril · numpy pandas 学习记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="zhangjikai">
+        <meta name="author" content="HHG">
         
         
-    
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
@@ -26,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
                 
             
                 
@@ -50,11 +49,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
                 
@@ -67,6 +62,14 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
                 
             
                 
@@ -95,9 +98,6 @@
         
     
         
-    
-
-
     
 
         
@@ -1200,7 +1200,7 @@
                                 <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#numpy-&#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril">Numpy &#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril</a></li><ul><li><a href="#numpytril">numpy.tril</a></li><li><a href="#numpytriu">numpy.triu</a></li><li><a href="#numpytriuindices">numpy.triu_indices</a></li><li><a href="#numpytriuindicesfrom">numpy.triu_indices_from</a></li></ul></ul></div><a href="#numpy-&#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="numpy-&#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril"><a name="numpy-&#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril" class="anchor-navigation-ex-anchor" href="#numpy-&#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril"><i class="fa fa-link" aria-hidden="true"></i></a>Numpy &#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;triu&#x548C;&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;tril</h1>
 <h2 id="numpytril"><a name="numpytril" class="anchor-navigation-ex-anchor" href="#numpytril"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.tril</h2>
 <p>&#x4E0B;&#x4E09;&#x89D2;&#x77E9;&#x9635;</p>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151129.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151129.png" data-lightbox="44fdd6cd-f392-47af-9500-8150c9cc9505" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151129.png" alt="undefined"></a></p>
 <pre class="language-"><code class="lang-python"><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;</span> np<span class="token punctuation">.</span>tril<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
 array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
        <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">,</span>  <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -1208,7 +1208,7 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
        <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">12</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
 <h2 id="numpytriu"><a name="numpytriu" class="anchor-navigation-ex-anchor" href="#numpytriu"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.triu</h2>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151234.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151234.png" data-lightbox="3fcab360-967c-4760-a85a-c4e7df82d125" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151234.png" alt="undefined"></a></p>
 <pre class="language-"><code>&gt;&gt;&gt; np.triu([[1,2,3],[4,5,6],[7,8,9],[10,11,12]], -1)
 array([[ 1,  2,  3],
        [ 4,  5,  6],
@@ -1291,7 +1291,7 @@ array<span class="token punctuation">(</span><span class="token punctuation">[</
 <p><code>numpy.tril_indices</code> &#x540C;&#x7406;</p>
 <h2 id="numpytriuindicesfrom"><a name="numpytriuindicesfrom" class="anchor-navigation-ex-anchor" href="#numpytriuindicesfrom"><i class="fa fa-link" aria-hidden="true"></i></a>numpy.triu_indices_from</h2>
 <p>&#x8FD4;&#x56DE;&#x4E0A;&#x4E09;&#x89D2;&#x77E9;&#x9635;&#x7684;&#x7D22;&#x5F15;</p>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151931.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151931.png" data-lightbox="5fc3a877-397d-4c93-b4d1-2db8dd3ed872" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200509151931.png" alt="undefined"></a></p>
 <pre class="language-"><code class="lang-python">data <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span>
 mask <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros_like<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
 mask
@@ -1309,8 +1309,8 @@ mask
 <p>&#x53C2;&#x8003;&#xFF1A;</p>
 <p><a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.triu.html#numpy.triu" blank="" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;</a> </p>
 <p><a href="http://doc.codingdict.com/NumPy_v111/reference/generated/numpy.triu_indices_from.html" blank="" target="_blank">&#x5B98;&#x65B9;&#x6587;&#x6863;(&#x4E2D;)</a> </p>
-<footer class="page-footer"><span class="copyright"> </span><span class="footer-modification">Update time&#xFF1A;
-2020-05-25 21:49
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-05-25 
 </span></footer>
                                 
                                 </section>
@@ -1354,13 +1354,12 @@ mask
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Numpy 上三角矩阵triu和下三角矩阵tril","level":"2.1.14","depth":2,"next":{"title":"NumPy 矩阵库(Matrix)","level":"2.1.15","depth":2,"path":"Chapter1/NumPy 矩阵库Matrix.md","ref":"Chapter1/NumPy 矩阵库Matrix.md","articles":[]},"previous":{"title":"Numpy np.zeros_like()函数","level":"2.1.13","depth":2,"path":"Chapter1/Numpy np.zeros_like函数.md","ref":"Chapter1/Numpy np.zeros_like函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","expandable-chapters-small@^0.1.7","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","theme-comscore":{},"prism-themes":{},"custom-favicon":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook 使用教程","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"记录 GitBook 的配置和一些插件的使用"},"file":{"path":"Chapter1/Numpy 上三角矩阵triu和下三角矩阵tril.md","mtime":"2020-05-25T13:49:11.654Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-10T12:42:45.510Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Numpy 上三角矩阵triu和下三角矩阵tril","level":"2.1.14","depth":2,"next":{"title":"NumPy 矩阵库(Matrix)","level":"2.1.15","depth":2,"path":"Chapter1/NumPy 矩阵库Matrix.md","ref":"Chapter1/NumPy 矩阵库Matrix.md","articles":[]},"previous":{"title":"Numpy np.zeros_like()函数","level":"2.1.13","depth":2,"path":"Chapter1/Numpy np.zeros_like函数.md","ref":"Chapter1/Numpy np.zeros_like函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"numpy pandas 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter1/Numpy 上三角矩阵triu和下三角矩阵tril.md","mtime":"2020-05-25T13:49:11.654Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T12:34:45.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1393,11 +1392,7 @@ mask
         
     
         
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
@@ -1413,6 +1408,10 @@ mask
         
     
         
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
@@ -1424,8 +1423,6 @@ mask
         <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>

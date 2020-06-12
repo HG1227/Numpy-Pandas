@@ -4,14 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Pandas 数据合并与重塑 · GitBook 使用教程</title>
+        <title>Pandas 数据合并与重塑 · numpy pandas 学习记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="zhangjikai">
+        <meta name="author" content="HHG">
         
         
-    
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
@@ -26,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
                 
             
                 
@@ -50,11 +49,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
                 
@@ -67,6 +62,14 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
                 
             
                 
@@ -95,9 +98,6 @@
         
     
         
-    
-
-
     
 
         
@@ -1219,7 +1219,7 @@
 <li><code>join</code>&#xFF1A;&#x8FDE;&#x63A5;&#x7684;&#x65B9;&#x5F0F; inner&#xFF0C;&#x6216;&#x8005;outer</li>
 </ul>
 <h3 id="&#x76F8;&#x540C;&#x5B57;&#x6BB5;&#x7684;&#x8868;&#x9996;&#x5C3E;&#x76F8;&#x63A5;"><a name="&#x76F8;&#x540C;&#x5B57;&#x6BB5;&#x7684;&#x8868;&#x9996;&#x5C3E;&#x76F8;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x76F8;&#x540C;&#x5B57;&#x6BB5;&#x7684;&#x8868;&#x9996;&#x5C3E;&#x76F8;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x540C;&#x5B57;&#x6BB5;&#x7684;&#x8868;&#x9996;&#x5C3E;&#x76F8;&#x63A5;</h3>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501095223.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501095223.png" data-lightbox="27a303ca-c094-4f97-a4bd-f58f3e809576" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501095223.png" alt="undefined"></a></p>
 <pre class="language-"><code class="lang-python"><span class="token keyword">import</span>  pandas <span class="token keyword">as</span> pd
 
 df1 <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">&apos;A0&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;A1&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;A2&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;A3&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -1272,23 +1272,23 @@ z 8    A8   B8   C8   D8
 <p>&#x5F53; <code>axis = 1</code> &#x7684;&#x65F6;&#x5019;&#xFF0C;<code>concat</code> &#x5C31;&#x662F;&#x884C;&#x5BF9;&#x9F50;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E0D;&#x540C;&#x5217;&#x540D;&#x79F0;&#x7684;&#x4E24;&#x5F20;&#x8868;&#x5408;&#x5E76;</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df1<span class="token punctuation">,</span> df4<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501095607.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501095607.png" data-lightbox="1a9848ed-c130-487f-98a7-6a8f1ff34121" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501095607.png" alt="undefined"></a></p>
 <h4 id="&#x53C2;&#x6570;-join"><a name="&#x53C2;&#x6570;-join" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;-join"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570; join</h4>
 <p>&#x52A0;&#x4E0A; <code>join</code>&#x53C2;&#x6570;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;&#x4E3A;<code>inner</code>&#x5F97;&#x5230;&#x7684;&#x662F;&#x4E24;&#x8868;&#x7684;&#x4EA4;&#x96C6;&#xFF0C;&#x5982;&#x679C;&#x662F;<code>outer</code>&#xFF0C;&#x5F97;&#x5230;&#x7684;&#x662F;&#x4E24;&#x8868;&#x7684;&#x5E76;&#x96C6;&#x3002;(&#x884C;&#x7D22;&#x5F15;&#x76F8;&#x540C;&#x7684;&#x884C;)</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df1<span class="token punctuation">,</span> df4<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> join<span class="token operator">=</span><span class="token string">&apos;inner&apos;</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100052.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100052.png" data-lightbox="84f7cd76-5fe7-424a-9af4-c6fdef0294fe" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100052.png" alt="undefined"></a></p>
 <h4 id="&#x53C2;&#x6570;-joinaxes"><a name="&#x53C2;&#x6570;-joinaxes" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;-joinaxes"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570; join_axes</h4>
 <p>&#x5982;&#x679C;&#x6709;<code>join_axes</code>&#x7684;&#x53C2;&#x6570;&#x4F20;&#x5165;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6839;&#x636E;&#x90A3;&#x4E2A;&#x8F74;&#x6765;&#x5BF9;&#x9F50;&#x6570;&#x636E;
 &#x4F8B;&#x5982;&#x6839;&#x636E; df1 &#x8868;&#x5BF9;&#x9F50;&#x6570;&#x636E;&#xFF0C;&#x5C31;&#x4F1A;&#x4FDD;&#x7559;&#x6307;&#x5B9A;&#x7684;df1&#x8868;&#x7684;&#x8F74;&#xFF0C;&#x7136;&#x540E;&#x5C06; df4 &#x7684;&#x8868;&#x4E0E;&#x4E4B;&#x62FC;&#x63A5;</p>
 <pre class="language-"><code class="lang-python"> result <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df1<span class="token punctuation">,</span> df4<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> join_axes<span class="token operator">=</span><span class="token punctuation">[</span>df1<span class="token punctuation">.</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100238.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100238.png" data-lightbox="c81b6004-f107-4e21-ad54-f422a0c2c64e" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100238.png" alt="undefined"></a></p>
 <h3 id="&#x53C2;&#x6570;-ignoreindex"><a name="&#x53C2;&#x6570;-ignoreindex" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;-ignoreindex"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570; ignore_index</h3>
 <p>&#x5982;&#x679C;&#x4E24;&#x4E2A;&#x8868;&#x7684; index &#x90FD;&#x6CA1;&#x6709;&#x5B9E;&#x9645;&#x542B;&#x4E49;&#xFF0C;&#x4F7F;&#x7528;<code>ignore_index</code>&#x53C2;&#x6570;&#xFF0C;&#x7F6E;true&#xFF0C;&#x5408;&#x5E76;&#x7684;&#x4E24;&#x4E2A;&#x8868;&#x5C31;&#x4F1A;&#x6839;&#x636E;&#x5217;&#x5B57;&#x6BB5;&#x5BF9;&#x9F50;&#xFF0C;&#x7136;&#x540E;&#x5408;&#x5E76;&#x3002;&#x6700;&#x540E;&#x518D;&#x91CD;&#x65B0;&#x6574;&#x7406;&#x4E00;&#x4E2A;&#x65B0;&#x7684; index&#x3002;</p>
 <pre class="language-"><code class="lang-python">result<span class="token operator">=</span>pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>df1<span class="token punctuation">,</span>df4<span class="token punctuation">]</span><span class="token punctuation">,</span>ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100540.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100540.png" data-lightbox="ddb2f3f0-229f-42c2-b807-343916daea5e" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100540.png" alt="undefined"></a></p>
 <h3 id="&#x5408;&#x5E76;&#x7684;&#x540C;&#x65F6;&#x589E;&#x52A0;&#x533A;&#x5206;&#x6570;&#x636E;&#x7EC4;"><a name="&#x5408;&#x5E76;&#x7684;&#x540C;&#x65F6;&#x589E;&#x52A0;&#x533A;&#x5206;&#x6570;&#x636E;&#x7EC4;" class="anchor-navigation-ex-anchor" href="#&#x5408;&#x5E76;&#x7684;&#x540C;&#x65F6;&#x589E;&#x52A0;&#x533A;&#x5206;&#x6570;&#x636E;&#x7EC4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5408;&#x5E76;&#x7684;&#x540C;&#x65F6;&#x589E;&#x52A0;&#x533A;&#x5206;&#x6570;&#x636E;&#x7EC4;</h3>
 <p>&#x524D;&#x9762;&#x63D0;&#x5230;&#x7684;keys&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x7ED9;&#x5408;&#x5E76;&#x540E;&#x7684;&#x8868;&#x589E;&#x52A0;key&#x6765;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x8868;&#x6570;&#x636E;&#x6765;&#x6E90;</p>
 <h4 id="&#x76F4;&#x63A5;&#x7528;key&#x53C2;&#x6570;&#x5B9E;&#x73B0;"><a name="&#x76F4;&#x63A5;&#x7528;key&#x53C2;&#x6570;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x76F4;&#x63A5;&#x7528;key&#x53C2;&#x6570;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F4;&#x63A5;&#x7528;key&#x53C2;&#x6570;&#x5B9E;&#x73B0;</h4>
@@ -1335,7 +1335,7 @@ z 8    A8   B8   C8   D8
 
 result <span class="token operator">=</span> df1<span class="token punctuation">.</span>append<span class="token punctuation">(</span>dicts<span class="token punctuation">,</span> ignore_index<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100911.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100911.png" data-lightbox="3f5e69cb-9d80-4830-a22f-75a1427273f4" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100911.png" alt="undefined"></a></p>
 <h2 id="append"><a name="append" class="anchor-navigation-ex-anchor" href="#append"><i class="fa fa-link" aria-hidden="true"></i></a>append</h2>
 <pre class="language-"><code class="lang-python">DataFrame<span class="token punctuation">.</span>append<span class="token punctuation">(</span>other<span class="token punctuation">,</span> 
                  ignore_index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> 
@@ -1351,7 +1351,7 @@ result <span class="token operator">=</span> df1<span class="token punctuation">
 </ul>
 <p><code>append</code>&#x662F; series &#x548C; dataframe&#x7684;&#x65B9;&#x6CD5;&#xFF0C;<strong>&#x4F7F;&#x7528;&#x5B83;&#x5C31;&#x662F;&#x9ED8;&#x8BA4;&#x6CBF;&#x7740;&#x5217;&#x8FDB;&#x884C;&#x51ED;&#x501F;&#xFF08;axis = 0&#xFF0C;&#x5217;&#x5BF9;&#x9F50;&#xFF09;</strong></p>
 <pre class="language-"><code>result = df1.append(df2)
-</code></pre><p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100350.png"></p>
+</code></pre><p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100350.png" data-lightbox="395e1a89-63f9-4c65-8966-9a8f36556ab0" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501100350.png" alt="undefined"></a></p>
 <h3 id="append&#x6DFB;&#x52A0;&#x5B57;&#x5178;"><a name="append&#x6DFB;&#x52A0;&#x5B57;&#x5178;" class="anchor-navigation-ex-anchor" href="#append&#x6DFB;&#x52A0;&#x5B57;&#x5178;"><i class="fa fa-link" aria-hidden="true"></i></a>append&#x6DFB;&#x52A0;&#x5B57;&#x5178;</h3>
 <pre class="language-"><code class="lang-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
 
@@ -1445,27 +1445,27 @@ result <span class="token operator">=</span> pd<span class="token punctuation">.
 <p>&#x53EA;&#x4FDD;&#x7559;&#x5DE6;&#x8868;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">&apos;left&apos;</span><span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;key1&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;key2&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101555.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101555.png" data-lightbox="3f4be113-85ba-49f3-b13b-fa96221d0d91" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101555.png" alt="undefined"></a></p>
 <h5 id="right"><a name="right" class="anchor-navigation-ex-anchor" href="#right"><i class="fa fa-link" aria-hidden="true"></i></a>right</h5>
 <p>&#x53EA;&#x4FDD;&#x7559;&#x53F3;&#x8868;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">&apos;right&apos;</span><span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;key1&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;key2&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101658.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101658.png" data-lightbox="e661b1f1-fa4e-4da9-bde5-7055cdb4d8b9" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101658.png" alt="undefined"></a></p>
 <h5 id="outer"><a name="outer" class="anchor-navigation-ex-anchor" href="#outer"><i class="fa fa-link" aria-hidden="true"></i></a>outer</h5>
 <p>&#x4FDD;&#x7559;&#x4E24;&#x4E2A;&#x8868;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">&apos;outer&apos;</span><span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;key1&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;key2&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101808.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101808.png" data-lightbox="0b21102b-1c7c-4fba-97e2-f0d5da22dd0f" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101808.png" alt="undefined"></a></p>
 <h5 id="inner"><a name="inner" class="anchor-navigation-ex-anchor" href="#inner"><i class="fa fa-link" aria-hidden="true"></i></a>inner</h5>
 <p>&#x53EA;&#x4FDD;&#x7559;&#x4E24;&#x4E2A;&#x8868;&#x4E2D;&#x516C;&#x5171;&#x90E8;&#x5206;&#x7684;&#x4FE1;&#x606F;</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> how<span class="token operator">=</span><span class="token string">&apos;inner&apos;</span><span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;key1&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;key2&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101853.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101853.png" data-lightbox="bdbebf24-527c-4455-b0ab-f51373d37ffc" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501101853.png" alt="undefined"></a></p>
 <h3 id="suffix&#x540E;&#x7F00;&#x53C2;&#x6570;"><a name="suffix&#x540E;&#x7F00;&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#suffix&#x540E;&#x7F00;&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>suffix&#x540E;&#x7F00;&#x53C2;&#x6570;</h3>
 <p>&#x5982;&#x679C;&#x548C;&#x8868;&#x5408;&#x5E76;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x9047;&#x5230;&#x6709;&#x4E00;&#x5217;&#x4E24;&#x4E2A;&#x8868;&#x90FD;&#x540C;&#x540D;&#xFF0C;&#x4F46;&#x662F;&#x503C;&#x4E0D;&#x540C;&#xFF0C;&#x5408;&#x5E76;&#x7684;&#x65F6;&#x5019;&#x53C8;&#x90FD;&#x60F3;&#x4FDD;&#x7559;&#x4E0B;&#x6765;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x7528;<code>suffixes</code>&#x7ED9;&#x6BCF;&#x4E2A;&#x8868;&#x7684;&#x91CD;&#x590D;&#x5217;&#x540D;&#x589E;&#x52A0;&#x540E;&#x7F00;&#x3002;</p>
 <pre class="language-"><code class="lang-python">result <span class="token operator">=</span> pd<span class="token punctuation">.</span>merge<span class="token punctuation">(</span>left<span class="token punctuation">,</span> right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">&apos;k&apos;</span><span class="token punctuation">,</span> suffixes<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;_l&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;_r&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501102416.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501102416.png" data-lightbox="108dbcea-dcfe-4ce2-9940-a99d0104e39e" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501102416.png" alt="undefined"></a></p>
 <p>&#x53E6;&#x5916;&#x8FD8;&#x6709;lsuffix &#x548C; rsuffix&#x5206;&#x522B;&#x6307;&#x5B9A;&#x5DE6;&#x8868;&#x7684;&#x540E;&#x7F00;&#x548C;&#x53F3;&#x8868;&#x7684;&#x540E;&#x7F00;&#x3002;</p>
 <h2 id="join"><a name="join" class="anchor-navigation-ex-anchor" href="#join"><i class="fa fa-link" aria-hidden="true"></i></a>join</h2>
 <p>dataframe &#x5185;&#x7F6E;&#x7684;<code>join</code>&#x65B9; &#x6CD5;&#x662F;&#x4E00;&#x79CD;&#x5FEB;&#x901F;&#x5408;&#x5E76;&#x7684;&#x65B9;&#x6CD5;&#x3002;<strong>&#x5B83;&#x9ED8;&#x8BA4;&#x4EE5;<code>index</code> &#x4F5C;&#x4E3A;&#x5BF9;&#x9F50;&#x7684;&#x5217;&#x3002;</strong></p>
@@ -1491,12 +1491,12 @@ In <span class="token punctuation">[</span><span class="token number">60</span><
 
 In <span class="token punctuation">[</span><span class="token number">61</span><span class="token punctuation">]</span><span class="token punctuation">:</span> result <span class="token operator">=</span> left<span class="token punctuation">.</span>join<span class="token punctuation">(</span>right<span class="token punctuation">,</span> on<span class="token operator">=</span><span class="token string">&apos;key&apos;</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501102221.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501102221.png" data-lightbox="1b94df65-e2d7-42b3-8887-23b7c2ce292f" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501102221.png" alt="undefined"></a></p>
 <h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
 <p><a href="https://blog.csdn.net/stevenkwong/article/details/52528616" blank="" target="_blank">PANDAS &#x6570;&#x636E;&#x5408;&#x5E76;&#x4E0E;&#x91CD;&#x5851;</a> </p>
 <p><a href="https://blog.csdn.net/sinat_29957455/article/details/84961936" blank="" target="_blank">pandas&#x7684;DataFrame&#x7684;append&#x65B9;&#x6CD5;&#x8BE6;&#x7EC6;&#x4ECB;&#x7ECD;</a></p>
-<footer class="page-footer"><span class="copyright"> </span><span class="footer-modification">Update time&#xFF1A;
-2020-05-25 21:49
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-05-25 
 </span></footer>
                                 
                                 </section>
@@ -1540,13 +1540,12 @@ In <span class="token punctuation">[</span><span class="token number">61</span><
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pandas 数据合并与重塑","level":"3.1.8","depth":2,"next":{"title":"Pandas 轴旋转stack和unstack","level":"3.1.9","depth":2,"path":"Chapter2/Pandas 轴旋转stack和unstack.md","ref":"Chapter2/Pandas 轴旋转stack和unstack.md","articles":[]},"previous":{"title":"Pandas 根据条件获取元素所在的位置（索引）","level":"3.1.7","depth":2,"path":"Chapter2/Pandas 根据条件获取元素所在的位置（索引）.md","ref":"Chapter2/Pandas 根据条件获取元素所在的位置（索引）.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","expandable-chapters-small@^0.1.7","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","theme-comscore":{},"prism-themes":{},"custom-favicon":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook 使用教程","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"记录 GitBook 的配置和一些插件的使用"},"file":{"path":"Chapter2/Pandas 数据合并与重塑.md","mtime":"2020-05-25T13:49:11.692Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-10T12:42:45.510Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pandas 数据合并与重塑","level":"3.1.8","depth":2,"next":{"title":"Pandas 轴旋转stack和unstack","level":"3.1.9","depth":2,"path":"Chapter2/Pandas 轴旋转stack和unstack.md","ref":"Chapter2/Pandas 轴旋转stack和unstack.md","articles":[]},"previous":{"title":"Pandas 根据条件获取元素所在的位置（索引）","level":"3.1.7","depth":2,"path":"Chapter2/Pandas 根据条件获取元素所在的位置（索引）.md","ref":"Chapter2/Pandas 根据条件获取元素所在的位置（索引）.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"numpy pandas 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter2/Pandas 数据合并与重塑.md","mtime":"2020-05-25T13:49:11.692Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T12:34:45.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1579,11 +1578,7 @@ In <span class="token punctuation">[</span><span class="token number">61</span><
         
     
         
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
@@ -1599,6 +1594,10 @@ In <span class="token punctuation">[</span><span class="token number">61</span><
         
     
         
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
@@ -1610,8 +1609,6 @@ In <span class="token punctuation">[</span><span class="token number">61</span><
         <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>

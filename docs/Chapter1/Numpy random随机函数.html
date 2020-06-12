@@ -4,14 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Numpy random函数 · GitBook 使用教程</title>
+        <title>Numpy random函数 · numpy pandas 学习记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="zhangjikai">
+        <meta name="author" content="HHG">
         
         
-    
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
@@ -26,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
                 
             
                 
@@ -50,11 +49,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
                 
@@ -67,6 +62,14 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
                 
             
                 
@@ -95,9 +98,6 @@
         
     
         
-    
-
-
     
 
         
@@ -1205,10 +1205,10 @@
 
 rng <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>RandomState<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
 rng<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">377</span><span class="token punctuation">]</span><span class="token punctuation">:</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5488135</span> <span class="token punctuation">,</span> <span class="token number">0.71518937</span><span class="token punctuation">,</span> <span class="token number">0.60276338</span><span class="token punctuation">,</span> <span class="token number">0.54488318</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># Out[377]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])</span>
 rng <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>RandomState<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
 rng<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
-Out<span class="token punctuation">[</span><span class="token number">379</span><span class="token punctuation">]</span><span class="token punctuation">:</span> array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5488135</span> <span class="token punctuation">,</span> <span class="token number">0.71518937</span><span class="token punctuation">,</span> <span class="token number">0.60276338</span><span class="token punctuation">,</span> <span class="token number">0.54488318</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment"># Out[379]: array([0.5488135 , 0.71518937, 0.60276338, 0.54488318])</span>
 </code></pre>
 <p>0&#x4E3A;&#x968F;&#x673A;&#x79CD;&#x5B50;&#xFF0C;&#x53EA;&#x8981;&#x968F;&#x673A;&#x79CD;&#x5B50;seed&#x76F8;&#x540C;&#xFF0C;&#x4EA7;&#x751F;&#x7684;&#x968F;&#x673A;&#x6570;&#x5E8F;&#x5217;&#x5C31;&#x76F8;&#x540C;</p>
 <p>&#x56E0;&#x4E3A;&#x662F;&#x4F2A;&#x968F;&#x673A;&#x6570;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x5728; rng &#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x4E0B;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x5F97;&#x4E0D;&#x5230;&#x76F8;&#x540C;&#x7684;&#x968F;&#x673A;&#x6570;&#x7EC4;&#x4E86;,&#x5373;&#x4FBF;&#x4F60;&#x518D;&#x6B21;&#x8F93;&#x5165;&#x4E86;<code>numpy.random.RandomState()</code>&#xFF1A;</p>
@@ -1487,9 +1487,9 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
 </ul>
 <h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
 <p><a href="http://doc.codingdict.com/NumPy_v111/reference/routines.random.html" blank="" target="_blank">&#x968F;&#x673A;&#x62BD;&#x6837;</a> </p>
-<p><a href="https://blog.csdn.net/lanchunhui/article/details/50163669" blank="" target="_blank">&#x4ECE;np.random.normal()&#x5230;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x7684;&#x62DF;</a> </p>
-<footer class="page-footer"><span class="copyright"> </span><span class="footer-modification">Update time&#xFF1A;
-2020-05-25 21:49
+<p><a href="https://blog.csdn.net/lanchunhui/article/details/50163669" blank="" target="_blank">&#x4ECE;np.random.normal()&#x5230;&#x6B63;&#x6001;&#x5206;&#x5E03;&#x7684;&#x62DF;</a></p>
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-06-11 
 </span></footer>
                                 
                                 </section>
@@ -1533,13 +1533,12 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Numpy random函数","level":"2.1.20","depth":2,"next":{"title":"Numpy 字符串操作","level":"2.1.21","depth":2,"path":"Chapter1/Numpy 字符串操作.md","ref":"Chapter1/Numpy 字符串操作.md","articles":[]},"previous":{"title":"Numpy squeeze()函数","level":"2.1.19","depth":2,"path":"Chapter1/Numpy squeeze函数.md","ref":"Chapter1/Numpy squeeze函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","expandable-chapters-small@^0.1.7","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","theme-comscore":{},"prism-themes":{},"custom-favicon":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook 使用教程","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"记录 GitBook 的配置和一些插件的使用"},"file":{"path":"Chapter1/Numpy random随机函数.md","mtime":"2020-05-25T13:49:11.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-10T12:42:45.510Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Numpy random函数","level":"2.1.20","depth":2,"next":{"title":"Numpy 字符串操作","level":"2.1.21","depth":2,"path":"Chapter1/Numpy 字符串操作.md","ref":"Chapter1/Numpy 字符串操作.md","articles":[]},"previous":{"title":"Numpy squeeze()函数","level":"2.1.19","depth":2,"path":"Chapter1/Numpy squeeze函数.md","ref":"Chapter1/Numpy squeeze函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"numpy pandas 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter1/Numpy random随机函数.md","mtime":"2020-06-11T15:58:32.486Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T12:34:45.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1572,11 +1571,7 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
         
     
         
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
@@ -1592,6 +1587,10 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
         
     
         
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
@@ -1603,8 +1602,6 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
         <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>

@@ -4,14 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Pandas pivot_table函数 · GitBook 使用教程</title>
+        <title>Pandas pivot_table函数 · numpy pandas 学习记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="zhangjikai">
+        <meta name="author" content="HHG">
         
         
-    
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
@@ -26,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
                 
             
                 
@@ -50,11 +49,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
                 
@@ -67,6 +62,14 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
                 
             
                 
@@ -95,9 +98,6 @@
         
     
         
-    
-
-
     
 
         
@@ -1278,24 +1278,24 @@
 <pre class="language-"><code class="lang-py"> table <span class="token operator">=</span> pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span> values<span class="token operator">=</span><span class="token string">&apos;D&apos;</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;B&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                      columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;C&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> aggfunc<span class="token operator">=</span>np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113410.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113410.png" data-lightbox="9f3e58a2-8f72-4a9e-bb2a-c8f2dbd125af" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113410.png" alt="undefined"></a></p>
 <p><strong>&#x4F7F;&#x7528;<code>fill_value</code>&#x53C2;&#x6570;&#x6765;&#x586B;&#x5145;&#x7F3A;&#x5931;&#x7684;&#x503C;</strong></p>
 <pre class="language-"><code class="lang-python">table <span class="token operator">=</span> pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span> values<span class="token operator">=</span><span class="token string">&apos;D&apos;</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;B&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                      columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;C&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> aggfunc<span class="token operator">=</span>np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">,</span> fill_value<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113547.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113547.png" data-lightbox="7fc55013-6748-43c9-91d0-55e4a53cd82f" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113547.png" alt="undefined"></a></p>
 <p><strong>&#x901A;&#x8FC7;&#x8DE8;&#x591A;&#x4E2A;&#x5217;&#x53D6;&#x5E73;&#x5747;&#x503C;&#x6765;&#x6C47;&#x603B;</strong></p>
 <pre class="language-"><code class="lang-python">table <span class="token operator">=</span> pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span> values<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;D&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;E&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;C&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                     aggfunc<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;D&apos;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">,</span>
                               <span class="token string">&apos;E&apos;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113700.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113700.png" data-lightbox="855cb94f-28fc-4689-8c4a-484a3dfc4250" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113700.png" alt="undefined"></a></p>
 <p><strong>&#x53EF;&#x4EE5;&#x4E3A;&#x4EFB;&#x4F55;&#x7ED9;&#x5B9A;&#x503C;&#x5217;&#x8BA1;&#x7B97;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x805A;&#x5408;</strong></p>
 <pre class="language-"><code class="lang-python">table <span class="token operator">=</span> pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span> values<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;D&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;E&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;A&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;C&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                      aggfunc<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;D&apos;</span><span class="token punctuation">:</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">,</span>
                               <span class="token string">&apos;E&apos;</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token builtin">min</span><span class="token punctuation">,</span> <span class="token builtin">max</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>mean<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113807.png"> </p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113807.png" data-lightbox="be629f06-4eea-42bb-9b3d-e615f8629c4b" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502113807.png" alt="undefined"></a> </p>
 <h2 id="&#x6848;&#x4F8B;"><a name="&#x6848;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x6848;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6848;&#x4F8B;</h2>
 <p><code>pivot_table</code> &#x6709;&#x56DB;&#x4E2A;&#x6700;&#x91CD;&#x8981;&#x7684;&#x53C2;&#x6570;<code>index&#x3001;values&#x3001;columns&#x3001;aggfunc</code>&#xFF0C;</p>
 <p>&#x4EE5;&#x706B;&#x7BAD;&#x961F;James_Harden&#x672C;&#x8D5B;&#x5B63;&#x6BD4;&#x8D5B;&#x6570;&#x636E;&#x4F5C;&#x4E3A;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x8BB2;&#x89E3;&#x3002;</p>
@@ -1306,16 +1306,16 @@
 df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span><span class="token string">&apos;James_Harden.csv&apos;</span><span class="token punctuation">,</span>encoding<span class="token operator">=</span><span class="token string">&apos;utf8&apos;</span><span class="token punctuation">)</span>
 df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502115432.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502115432.png" data-lightbox="97a35eda-2ba3-43c1-9104-abb56bdafb30" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502115432.png" alt="undefined"></a></p>
 <h3 id="&#x53C2;&#x6570;-index"><a name="&#x53C2;&#x6570;-index" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;-index"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570; Index</h3>
 <p>&#x6BCF;&#x4E2A; <code>pivot_table</code> &#x5FC5;&#x987B;&#x62E5;&#x6709;&#x4E00;&#x4E2A;<code>index</code>&#xFF0C;<strong>&#x5982;&#x679C;&#x60F3;&#x67E5;&#x770B;&#x54C8;&#x767B;&#x5BF9;&#x9635;&#x6BCF;&#x4E2A;&#x961F;&#x4F0D;&#x7684;&#x5F97;&#x5206;&#xFF0C;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5C06;</strong>&#x5BF9;&#x624B;&#x8BBE;&#x7F6E;&#x4E3A;<code>index</code></p>
 <pre class="language-"><code class="lang-python">pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">&apos;&#x5BF9;&#x624B;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502115809.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502115809.png" data-lightbox="b83cdd77-ee7c-479c-902e-307a014a1d3f" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502115809.png" alt="undefined"></a></p>
 <p><strong>&#x5BF9;&#x624B;</strong>&#x6210;&#x4E3A;&#x4E86;&#x7B2C;&#x4E00;&#x5C42;&#x7D22;&#x5F15;&#xFF0C;&#x8FD8;&#x60F3;&#x770B;&#x770B;&#x5BF9;&#x9635;<em>&#x540C;&#x4E00;&#x5BF9;&#x624B;&#x5728;&#x4E0D;&#x540C;&#x4E3B;&#x5BA2;&#x573A;&#x4E0B;&#x7684;&#x6570;&#x636E;</em>&#xFF0C;&#x8BD5;&#x7740;&#x5C06;<strong>&#x5BF9;&#x624B;</strong>&#x4E0E;<strong>&#x80DC;&#x8D1F;</strong>&#x4E0E;<strong>&#x4E3B;&#x5BA2;&#x573A;</strong>&#x90FD;&#x8BBE;&#x7F6E;&#x4E3A;<strong>index</strong></p>
 <pre class="language-"><code class="lang-python">pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x5BF9;&#x624B;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x4E3B;&#x5BA2;&#x573A;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502120026.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502120026.png" data-lightbox="37095638-a013-4e97-8645-bf4b6297562c" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502120026.png" alt="undefined"></a></p>
 <p>&#x8BD5;&#x7740;&#x4EA4;&#x6362;&#x4E0B;&#x5B83;&#x4EEC;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x6570;&#x636E;&#x7ED3;&#x679C;&#x4E00;&#x6837;&#xFF1A;</p>
 <pre class="language-"><code class="lang-python">pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x4E3B;&#x5BA2;&#x573A;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x5BF9;&#x624B;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
@@ -1324,27 +1324,27 @@ df<span class="token punctuation">.</span>head<span class="token punctuation">(<
 <p>&#x901A;&#x8FC7;&#x4E0A;&#x9762;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x4E86;james harden&#x5728;&#x5BF9;&#x9635;&#x5BF9;&#x624B;&#x65F6;&#x7684;<strong>&#x6240;&#x6709;&#x6570;&#x636E;</strong>&#xFF0C;&#x800C;Values&#x53EF;&#x4EE5;&#x5BF9;&#x9700;&#x8981;&#x7684;&#x8BA1;&#x7B97;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x7B5B;&#x9009;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;james harden&#x5728;&#x4E3B;&#x5BA2;&#x573A;&#x548C;&#x4E0D;&#x540C;&#x80DC;&#x8D1F;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x5F97;&#x5206;&#x3001;&#x7BEE;&#x677F;&#x4E0E;&#x52A9;&#x653B;&#x4E09;&#x9879;&#x6570;&#x636E;&#xFF1A;</p>
 <pre class="language-"><code class="lang-python">pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x4E3B;&#x5BA2;&#x573A;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x80DC;&#x8D1F;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>values<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x5F97;&#x5206;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x52A9;&#x653B;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x7BEE;&#x677F;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p>&#x200B;    <img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142104.png">       </p>
+<p>&#x200B;    <a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142104.png" data-lightbox="991dab05-10dc-4b98-95fe-8520c1ebb069" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142104.png" alt="undefined"></a>       </p>
 <h3 id="&#x53C2;&#x6570;-columns"><a name="&#x53C2;&#x6570;-columns" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;-columns"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570; Columns</h3>
 <p>Columns&#x7C7B;&#x4F3C;Index&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;<strong>&#x5217;&#x5C42;&#x6B21;&#x5B57;&#x6BB5;</strong>&#xFF0C;&#x5B83;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5FC5;&#x8981;&#x53C2;&#x6570;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x5206;&#x5272;&#x6570;&#x636E;&#x7684;&#x53EF;&#x9009;&#x65B9;&#x5F0F;&#x3002;</p>
 <pre class="language-"><code class="lang-python"><span class="token comment">#fill_value&#x586B;&#x5145;&#x7A7A;&#x503C;,margins=True&#x8FDB;&#x884C;&#x6C47;&#x603B;</span>
 pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x4E3B;&#x5BA2;&#x573A;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x5BF9;&#x624B;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>values<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x5F97;&#x5206;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>aggfunc<span class="token operator">=</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span><span class="token builtin">sum</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142317.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142317.png" data-lightbox="36fb1c72-43c6-46a6-b00c-ab5777282fcd" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142317.png" alt="undefined"></a></p>
 <pre class="language-"><code class="lang-python">table<span class="token operator">=</span>pd<span class="token punctuation">.</span>pivot_table<span class="token punctuation">(</span>df<span class="token punctuation">,</span>index<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x5BF9;&#x624B;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x80DC;&#x8D1F;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x4E3B;&#x5BA2;&#x573A;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>values<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">u&apos;&#x5F97;&#x5206;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x52A9;&#x653B;&apos;</span><span class="token punctuation">,</span><span class="token string">u&apos;&#x7BEE;&#x677F;&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span>aggfunc<span class="token operator">=</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span>mean<span class="token punctuation">]</span><span class="token punctuation">,</span>fill_value<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
 </code></pre>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142839.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142839.png" data-lightbox="6a0681c7-a539-481f-bbe4-1290c11497a9" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142839.png" alt="undefined"></a></p>
 <h2 id="query"><a name="query" class="anchor-navigation-ex-anchor" href="#query"><i class="fa fa-link" aria-hidden="true"></i></a>query</h2>
 <p>&#x5F53;&#x8868;&#x683C;&#x751F;&#x6210;&#x540E;&#x5982;&#x4F55;&#x67E5;&#x8BE2;&#x67D0;&#x4E00;&#x9879;&#x6570;&#x636E;&#x5462;&#xFF1F;</p>
 <p>ex.&#x6839;&#x636E;<strong>&#x4E0A;&#x8868;</strong>&#x67E5;&#x8BE2;&#x54C8;&#x767B;&#x5BF9;&#x9635;&#x7070;&#x718A;&#x65F6;&#x7684;&#x6570;&#x636E;</p>
 <pre class="language-"><code>table.query(&apos;&#x5BF9;&#x624B; == [&quot;&#x7070;&#x718A;&quot;]&apos;)
-</code></pre><p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142702.png"></p>
+</code></pre><p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142702.png" data-lightbox="897b0e1b-5dd9-411d-a484-6db0a02d9adf" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142702.png" alt="undefined"></a></p>
 <h2 id="cheat-sheet"><a name="cheat-sheet" class="anchor-navigation-ex-anchor" href="#cheat-sheet"><i class="fa fa-link" aria-hidden="true"></i></a>Cheat Sheet</h2>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142915.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142915.png" data-lightbox="f2ebb31b-8528-4702-b70c-c2fc5958dc0a" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200502142915.png" alt="undefined"></a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/31952948" blank="" target="_blank">Pandas | &#x4E00;&#x6587;&#x770B;&#x61C2;&#x900F;&#x89C6;&#x8868;pivot_table</a> </p>
 <p><a href="https://pan.baidu.com/s/1kUWcTvT" blank="" target="_blank">&#x6570;&#x636E;</a> </p>
-<footer class="page-footer"><span class="copyright"> </span><span class="footer-modification">Update time&#xFF1A;
-2020-05-25 21:49
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-05-25 
 </span></footer>
                                 
                                 </section>
@@ -1388,13 +1388,12 @@ pd<span class="token punctuation">.</span>pivot_table<span class="token punctuat
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pandas pivot_table函数","level":"3.1.38","depth":2,"next":{"title":"Pandas crosstab交叉表","level":"3.1.39","depth":2,"path":"Chapter2/Pandas crosstab交叉表.md","ref":"Chapter2/Pandas crosstab交叉表.md","articles":[]},"previous":{"title":"Pandas pivot函数","level":"3.1.37","depth":2,"path":"Chapter2/Pandas pivot函数.md","ref":"Chapter2/Pandas pivot函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","expandable-chapters-small@^0.1.7","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","theme-comscore":{},"prism-themes":{},"custom-favicon":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook 使用教程","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"记录 GitBook 的配置和一些插件的使用"},"file":{"path":"Chapter2/Pandas pivot_table函数.md","mtime":"2020-05-25T13:49:11.683Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-10T12:42:45.510Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pandas pivot_table函数","level":"3.1.38","depth":2,"next":{"title":"Pandas crosstab交叉表","level":"3.1.39","depth":2,"path":"Chapter2/Pandas crosstab交叉表.md","ref":"Chapter2/Pandas crosstab交叉表.md","articles":[]},"previous":{"title":"Pandas pivot函数","level":"3.1.37","depth":2,"path":"Chapter2/Pandas pivot函数.md","ref":"Chapter2/Pandas pivot函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"numpy pandas 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter2/Pandas pivot_table函数.md","mtime":"2020-05-25T13:49:11.683Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T12:34:45.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1427,11 +1426,7 @@ pd<span class="token punctuation">.</span>pivot_table<span class="token punctuat
         
     
         
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
@@ -1447,6 +1442,10 @@ pd<span class="token punctuation">.</span>pivot_table<span class="token punctuat
         
     
         
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
@@ -1458,8 +1457,6 @@ pd<span class="token punctuation">.</span>pivot_table<span class="token punctuat
         <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>

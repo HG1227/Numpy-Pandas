@@ -4,14 +4,13 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Pandas 缺失值处理 · GitBook 使用教程</title>
+        <title>Pandas 缺失值处理 · numpy pandas 学习记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="zhangjikai">
+        <meta name="author" content="HHG">
         
         
-    
     
     <link rel="stylesheet" href="../gitbook/style.css">
 
@@ -26,7 +25,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-base16-ateliersulphurpool.light.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-vs.css">
                 
             
                 
@@ -50,11 +49,7 @@
                 
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
                 
             
                 
@@ -67,6 +62,14 @@
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
                 
             
                 
@@ -95,9 +98,6 @@
         
     
         
-    
-
-
     
 
         
@@ -1201,7 +1201,7 @@
 <p>&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#x5BF9;&#x4E8E;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7ECF;&#x5E38;&#x80FD;&#x770B;&#x89C1;&#x7F3A;&#x5931;&#x503C;&#xFF0C;&#x4E0B;&#x5982;&#x4F55;&#x5229;&#x7528;pandas  &#x6765;&#x5904;&#x7406;&#x7F3A;&#x5931;&#x503C;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x7F3A;&#x5931;&#x503C;&#x5904;&#x7406;&#x65B9;&#x5F0F;&#x6709;&#xFF0C;&#x8FC7;&#x6EE4;&#x3001;&#x586B;&#x5145;&#x3002;</p>
 <h2 id="&#x7F3A;&#x5931;&#x503C;&#x7684;&#x5224;&#x65AD;"><a name="&#x7F3A;&#x5931;&#x503C;&#x7684;&#x5224;&#x65AD;" class="anchor-navigation-ex-anchor" href="#&#x7F3A;&#x5931;&#x503C;&#x7684;&#x5224;&#x65AD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F3A;&#x5931;&#x503C;&#x7684;&#x5224;&#x65AD;</h2>
 <p>pandas &#x4F7F;&#x7528;&#x6D6E;&#x70B9;&#x503C; <code>NaN</code>(Not a Number)&#x8868;&#x793A;&#x6D6E;&#x70B9;&#x6570;&#x548C;&#x975E;&#x6D6E;&#x70B9;&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x7F3A;&#x5931;&#x503C;&#xFF0C;&#x540C;&#x65F6; python&#x5185;&#x7F6E;<code>None</code>&#x503C;&#x4E5F;&#x4F1A;&#x88AB;&#x5F53;&#x4F5C;&#x662F;&#x7F3A;&#x5931;&#x503C;&#x3002;</p>
-<p><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501111801.png"></p>
+<p><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501111801.png" data-lightbox="3dabf2a1-50a5-4911-a81b-173e63a0d703" data-title="undefined" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200501111801.png" alt="undefined"></a></p>
 <h2 id="dataframedropna"><a name="dataframedropna" class="anchor-navigation-ex-anchor" href="#dataframedropna"><i class="fa fa-link" aria-hidden="true"></i></a>DataFrame.dropna()</h2>
 <pre class="language-"><code class="lang-python">DataFrame<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> 
                  how<span class="token operator">=</span><span class="token string">&apos;any&apos;</span><span class="token punctuation">,</span> 
@@ -1409,8 +1409,8 @@ df<span class="token punctuation">[</span><span class="token string">&apos;C&apo
 3  NaN  3.0  hello  4
 &apos;&apos;&apos;</span>
 </code></pre>
-<footer class="page-footer"><span class="copyright"> </span><span class="footer-modification">Update time&#xFF1A;
-2020-05-25 21:49
+<footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
+2020-05-25 
 </span></footer>
                                 
                                 </section>
@@ -1454,13 +1454,12 @@ df<span class="token punctuation">[</span><span class="token string">&apos;C&apo
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pandas 缺失值处理","level":"3.1.10","depth":2,"next":{"title":"Pandas 数据排序","level":"3.1.11","depth":2,"path":"Chapter2/Pandas 数据排序.md","ref":"Chapter2/Pandas 数据排序.md","articles":[]},"previous":{"title":"Pandas 轴旋转stack和unstack","level":"3.1.9","depth":2,"path":"Chapter2/Pandas 轴旋转stack和unstack.md","ref":"Chapter2/Pandas 轴旋转stack和unstack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","mermaid-gb3@2.1.0","expandable-chapters-small@^0.1.7","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD HH:mm"},"prism":{"css":["prism-themes/themes/prism-base16-ateliersulphurpool.light.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"mermaid-gb3":{},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","theme-comscore":{},"prism-themes":{},"custom-favicon":{},"expandable-chapters-small":{},"local-video":{},"copy-code-button":{},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"search-plus":{}},"theme":"default","author":"zhangjikai","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"GitBook 使用教程","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"记录 GitBook 的配置和一些插件的使用"},"file":{"path":"Chapter2/Pandas 缺失值处理.md","mtime":"2020-05-25T13:49:11.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-10T12:42:45.510Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pandas 缺失值处理","level":"3.1.10","depth":2,"next":{"title":"Pandas 数据排序","level":"3.1.11","depth":2,"path":"Chapter2/Pandas 数据排序.md","ref":"Chapter2/Pandas 数据排序.md","articles":[]},"previous":{"title":"Pandas 轴旋转stack和unstack","level":"3.1.9","depth":2,"path":"Chapter2/Pandas 轴旋转stack和unstack.md","ref":"Chapter2/Pandas 轴旋转stack和unstack.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"numpy pandas 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter2/Pandas 缺失值处理.md","mtime":"2020-05-25T13:49:11.697Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-12T12:34:45.379Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
 
         
-    
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
     
@@ -1493,11 +1492,7 @@ df<span class="token punctuation">[</span><span class="token string">&apos;C&apo
         
     
         
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
         
     
         
@@ -1513,6 +1508,10 @@ df<span class="token punctuation">[</span><span class="token string">&apos;C&apo
         
     
         
+        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
         <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
@@ -1524,8 +1523,6 @@ df<span class="token punctuation">[</span><span class="token string">&apos;C&apo
         <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
         
     
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
 
     </body>
 </html>
