@@ -1,8 +1,6 @@
-# scipy-interpolate 
+# 一维插值interp1d
 
-## **一维插值**
-
-### ** `interp1d`类进行一维插值**
+#  `interp1d`类进行一维插值
 
 一维数据的插值运算可以通过函数`interp1d()`完成。
 
@@ -45,7 +43,8 @@ pl.legend()
     <img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200106170508.png"/>
 </center>
 
-### ** UnivariateSpline**
+
+## UnivariateSpline
 
 `interp1d`不能外推运算（外插值）`UnivariateSpline`可以外插值
 
@@ -91,6 +90,7 @@ plt.show()
     <img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200106204021.png"/>
 </center>
 
+
 *也就插值到(0,12)，范围再大就不行了，毕竟插值的专长不在于预测*
 
 <br>
@@ -118,6 +118,7 @@ plt.show()
     <img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200106204108.png"/>
 </center>
 
+
 | [`__call__`](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.interpolate.UnivariateSpline.__call__.html#scipy.interpolate.UnivariateSpline.__call__)(x[, nu]) | Evaluate spline (or its nu-th derivative) at positions x.    |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [`antiderivative`](https://docs.scipy.org/doc/scipy-0.14.0/reference/generated/scipy.interpolate.UnivariateSpline.antiderivative.html#scipy.interpolate.UnivariateSpline.antiderivative)([n]) | Construct a new spline representing the antiderivative of this spline. |
@@ -135,7 +136,7 @@ print(np.array_str(func2.roots(), precision=3))
 # [ 0.046  3.152  6.299  9.349 12.67  15.793 18.813]
 ```
 
-### ** 参数插值**
+## 参数插值
 
 使用参数插值连接二维平面上的点
 
@@ -166,11 +167,12 @@ pl.legend()
 
 
 
+
 scipy.interpolate包里提供了两个函数`splev`和`splrep`共同完成(B-样条:贝兹曲线(又称贝塞尔曲线))插值，和之前一元插值一步就能完成不同，样条插值需要两步完成，第一步先用`splrep`计算出b样条曲线的参数tck，第二步在第一步的基础上用`splev`计算出各取样点的插值结果。
 
 
 
-### ** 一元函数的 Rbf 插值**
+## 一元函数的 Rbf 插值
 
 ```python
 lass scipy.interpolate.Rbf(*args)
@@ -178,7 +180,7 @@ lass scipy.interpolate.Rbf(*args)
 
 参数：
 
-- ***args**：arrays
+- **args**：arrays
 
   x, y, z, …, d, where x, y, z, … are the coordinates of the nodes and d is the array of values at the nodes
 
@@ -220,6 +222,7 @@ pl.legend()
     <img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200106205223.png"/>
 </center>
 
+
 ```python
 for fname, rbf in zip(funcs, rbfs):
     print (fname, rbf.nodes)
@@ -228,109 +231,4 @@ for fname, rbf in zip(funcs, rbfs):
 # gaussian [ 1.00321945 -0.02345964 -0.65441716  0.91375159]
 # linear [-0.26666667  0.6         0.73333333 -0.9       ]
 ```
-
-
-
-## **多维插值**
-
-### **interp2d`**
-
-```python
-class scipy.interpolate.interp2d(x, y, z, 
-                                 kind='linear', 
-                                 copy=True, 
-                                 bounds_error=False, 
-                                 fill_value=None
-                                )
-```
-
-参数：
-
-`x`, `y`, `z` :
-
-array_like
-
-If the points lie on a regular grid, *x* can specify the column coordinates and *y* the row coordinates, for example:
-
-```
->>> x = [0,1,2];  y = [0,3]; z = [[1,2,3], [4,5,6]]
-```
-
-If *x* and *y* are multi-dimensional, they are flattened before use.
-
-**`kind`**：
-
-**{‘linear’, ‘cubic’, ‘quintic’}, optional**
-
-```python
-# 生成数据
-import numpy as np
-def func(x,y):
-    return (x+y)*np.exp(-5*(x**2+y**2))
-x,y=np.mgrid[-1:1:8j,-1:1:8j]
-z=func(x,y)
-
-# 插值
-from scipy import interpolate
-func=interpolate.interp2d(x,y,z,kind='cubic')
-
-xnew=np.linspace(-1,1,100)
-ynew=np.linspace(-1,1,100)
-znew=func(xnew,ynew)#xnew, ynew是一维的，输出znew是二维的
-xnew,ynew=np.mgrid[-1:1:100j,-1:1:100j]#统一变成二维，便于下一步画图
-
-# 画图
-import mpl_toolkits.mplot3d
-import matplotlib.pyplot as plt
-ax=plt.subplot(111,projection='3d')
-ax.plot_surface(xnew,ynew,znew)
-ax.scatter(x,y,z,c='r',marker='^')
-plt.show()
-```
-
-<center>
-<img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200106203704.png"/></center>
-
-
-
-### **二维插值 Rbf**
-
-**二维径向基函数插值**
-
-```python
-# 随机生成点，并计算函数值
-import numpy as np
-def func(x,y):
-    return (x+y)*np.exp(-5*(x**2+y**2))
-
-x=np.random.uniform(low=-1,high=1,size=100)
-y=np.random.uniform(low=-1,high=1,size=100)
-z=func(x,y)
-
-# 插值
-from scipy import  interpolate
-func=interpolate.Rbf(x,y,z,function='multiquadric')
-xnew,ynew=np.mgrid[-1:1:100j,-1:1:100j]
-znew=func(xnew,ynew)#输入输出都是二维
-
-# 画图
-import mpl_toolkits.mplot3d
-import matplotlib.pyplot as plt
-ax=plt.subplot(111,projection='3d')
-ax.plot_surface(xnew,ynew,znew)
-ax.scatter(x,y,z,c='r',marker='^') 
-plt.show()
-```
-
-<center>
-    <img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200106205824.png"/>
-</center>
-
-
-
-## 参考
-
-1. <a href="https://www.guofei.site/2017/06/06/scipyinterpolate.html" target="">scipy.interpolate</a> 
-2. <a href="http://liao.cpython.org/scipytutorial12/" target="">Scipy Tutorial-一元样条插值</a> 
-3. <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.Rbf.html" target="">scipy.interpolate.Rbf</a> 
 
