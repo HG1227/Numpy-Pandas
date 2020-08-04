@@ -77,10 +77,13 @@ plt.legend()
 
 <center><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200704212642.png" alt="curve_fit" style="zoom: 20%;" /></center>
 
-
 # 计算拟合结果的指标
 
+
+
 ## 总平方和 $SST$：
+
+
 
 
 总平方和(SST) = 回归平方和(SSR)十残差平方和(SSE)
@@ -139,7 +142,7 @@ $$
 def get_indexes(y_predict, y_data):
     n = y_data.size
     
-    # 计算 和方差 SSE
+    #计算 残差平方方差 SSE
     SSE = ((y_data - y_predict)**2).sum()
     
     # 均方差 MSE

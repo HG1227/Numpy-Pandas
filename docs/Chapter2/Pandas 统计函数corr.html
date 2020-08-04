@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Pandas drop函数 · python 学习记录</title>
+        <title>Pandas 统计函数corr · python 学习记录</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -111,10 +111,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="Pandas 唯一值，计数值.html" />
+    <link rel="next" href="Pandas 统计函数scatter_matrix.html" />
     
     
-    <link rel="prev" href="Pandas 数据去重.html" />
+    <link rel="prev" href="Pandas 描述和汇总统计.html" />
     
 
     </head>
@@ -680,7 +680,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.13" data-path="Pandas 统计函数corr.html">
+        <li class="chapter active" data-level="3.1.13" data-path="Pandas 统计函数corr.html">
             
                 <a href="Pandas 统计函数corr.html">
             
@@ -927,7 +927,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.1.32" data-path="Pandas drop函数.html">
+        <li class="chapter " data-level="3.1.32" data-path="Pandas drop函数.html">
             
                 <a href="Pandas drop函数.html">
             
@@ -1402,7 +1402,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Pandas drop函数</a>
+        <a href=".." >Pandas 统计函数corr</a>
     </h1>
 </div>
 
@@ -1417,35 +1417,58 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#pandas-drop&#x51FD;&#x6570;">Pandas drop&#x51FD;&#x6570;</a></li><ul><li><a href="#&#x6E05;&#x7406;&#x65E0;&#x6548;&#x6570;&#x636E;">&#x6E05;&#x7406;&#x65E0;&#x6548;&#x6570;&#x636E;</a></li><li><a href="#drop&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;">drop&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;</a></li><ul><li><a href="#&#x5220;&#x9664;&#x884C;&#x3001;&#x5220;&#x9664;&#x5217;">&#x5220;&#x9664;&#x884C;&#x3001;&#x5220;&#x9664;&#x5217;</a></li><li><a href="#inplace&#x53C2;&#x6570;">inplace&#x53C2;&#x6570;</a></li><li><a href="#&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;">&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</a></li></ul></ul></ul></div><a href="#pandas-drop&#x51FD;&#x6570;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="pandas-drop&#x51FD;&#x6570;"><a name="pandas-drop&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#pandas-drop&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>Pandas drop&#x51FD;&#x6570;</h1>
-<p>&#x5220;&#x9664;&#x8868;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x884C;&#x6216;&#x8005;&#x67D0;&#x4E00;&#x5217;&#x66F4;&#x660E;&#x667A;&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;drop&#xFF0C;&#x5B83;&#x4E0D;&#x6539;&#x53D8;&#x539F;&#x6709;&#x7684;df&#x4E2D;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x662F;&#x8FD4;&#x56DE;&#x53E6;&#x4E00;&#x4E2A;dataframe&#x6765;&#x5B58;&#x653E;&#x5220;&#x9664;&#x540E;&#x7684;&#x6570;&#x636E;&#x3002;</p>
-<h2 id="&#x6E05;&#x7406;&#x65E0;&#x6548;&#x6570;&#x636E;"><a name="&#x6E05;&#x7406;&#x65E0;&#x6548;&#x6570;&#x636E;" class="anchor-navigation-ex-anchor" href="#&#x6E05;&#x7406;&#x65E0;&#x6548;&#x6570;&#x636E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6E05;&#x7406;&#x65E0;&#x6548;&#x6570;&#x636E;</h2>
-<pre class="language-"><code class="lang-python">df<span class="token punctuation">[</span>df<span class="token punctuation">.</span>isnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>  <span class="token comment">#&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E2A;true&#x6216;false&#x7684;Series&#x5BF9;&#x8C61;&#xFF08;&#x63A9;&#x7801;&#x5BF9;&#x8C61;&#xFF09;&#xFF0C;&#x8FDB;&#x800C;&#x7B5B;&#x9009;&#x51FA;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x7279;&#x5B9A;&#x6570;&#x636E;&#x3002;</span>
-df<span class="token punctuation">[</span>df<span class="token punctuation">.</span>notnull<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><a href="#pandas-&#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr">Pandas &#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr</a></li><ul><li><a href="#examples">Examples</a></li><li><a href="#&#x53C2;&#x8003;">&#x53C2;&#x8003;</a></li></ul></ul></div><a href="#pandas-&#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="pandas-&#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr"><a name="pandas-&#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr" class="anchor-navigation-ex-anchor" href="#pandas-&#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr"><i class="fa fa-link" aria-hidden="true"></i></a>Pandas &#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr</h1>
+<p>&#x76F8;&#x5173;&#x7CFB;&#x6570;(correlation coefficients)</p>
+<p>&#x8BA1;&#x7B97;&#x5217;&#x4E0E;&#x5217;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x5173;&#x7CFB;&#x6570; (&#x4E0D;&#x5305;&#x62EC;NA/null)&#xFF0C;&#x8FD4;&#x56DE;&#x76F8;&#x5173;&#x7CFB;&#x6570;&#x77E9;&#x9635;</p>
+<pre class="language-"><code class="lang-python">DataFrame<span class="token punctuation">.</span>corr<span class="token punctuation">(</span> method<span class="token operator">=</span><span class="token string">&apos;pearson&apos;</span><span class="token punctuation">,</span> min_periods<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span> &#x2192; &#x2019;DataFrame&#x2019;
+</code></pre>
+<p>&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li><code>method</code>:{&#x2018;pearson&#x2019;, &#x2018;kendall&#x2019;, &#x2018;spearman&#x2019;} or callable<ul>
+<li><code>pearson</code>&#xFF1A;&#x6807;&#x51C6;&#x76F8;&#x5173;&#x7CFB;&#x6570;</li>
+<li><code>kendall</code>&#xFF1A;Kendall Tau&#x76F8;&#x5173;&#x7CFB;&#x6570;</li>
+<li><code>spearman</code>&#xFF1A;Spearman&#x7B49;&#x7EA7;&#x76F8;&#x5173;</li>
+<li><code>callable</code>&#xFF1A;&#x53EF;&#x8F93;&#x5165;&#x4E24;&#x4E2A;1d ndarray&#x6765;&#x8C03;&#x7528;</li>
+</ul>
+</li>
+</ul>
+<p>&#x8FD4;&#x56DE;&#x503C;&#xFF1A;<code>DataFrame</code></p>
+<h2 id="examples"><a name="examples" class="anchor-navigation-ex-anchor" href="#examples"><i class="fa fa-link" aria-hidden="true"></i></a>Examples</h2>
+<pre class="language-"><code class="lang-python">allDf <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">&apos;x&apos;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;y&apos;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;s&apos;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">&apos;c&apos;</span><span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>index <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&apos;p1&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;p2&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;p3&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;p4&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;p5&apos;</span><span class="token punctuation">,</span><span class="token string">&apos;p6&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">#&#x5C06;&#x6240;&#x6709;&#x542B;&#x6709;nan&#x9879;&#x7684;row&#x5220;&#x9664;</span>
-df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>thresh<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>  <span class="token comment">#&#x5C06;&#x5728;&#x5217;&#x7684;&#x65B9;&#x5411;&#x4E0A;&#x4E09;&#x4E2A;&#x4E3A;NaN&#x7684;&#x9879;&#x5220;&#x9664;</span>
-df<span class="token punctuation">.</span>dropna<span class="token punctuation">(</span>how<span class="token operator">=</span><span class="token string">&apos;ALL&apos;</span><span class="token punctuation">)</span>        <span class="token comment">#&#x5C06;&#x5168;&#x90E8;&#x9879;&#x90FD;&#x662F;nan&#x7684;row&#x5220;&#x9664;</span>
+allDf
 </code></pre>
-<h2 id="drop&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;"><a name="drop&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;" class="anchor-navigation-ex-anchor" href="#drop&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>drop&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;</h2>
-<h3 id="&#x5220;&#x9664;&#x884C;&#x3001;&#x5220;&#x9664;&#x5217;"><a name="&#x5220;&#x9664;&#x884C;&#x3001;&#x5220;&#x9664;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5220;&#x9664;&#x884C;&#x3001;&#x5220;&#x9664;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5220;&#x9664;&#x884C;&#x3001;&#x5220;&#x9664;&#x5217;</h3>
-<pre class="language-"><code class="lang-python"><span class="token keyword">print</span> frame<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;a&apos;</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span> frame<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">&apos;Ohio&apos;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre class="language-"><code>    x    y    s    c
+p1    0    0    0    5
+p2    1    3    1    4
+p3    2    2    2    3
+p4    4    4    3    2
+p5    7    5    4    1
+p6    10    7    5    0
+</code></pre><pre class="language-"><code class="lang-python">allDf<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<p><strong>drop &#x51FD;&#x6570;&#x9ED8;&#x8BA4;&#x5220;&#x9664;&#x884C;&#xFF0C;&#x5217;&#x9700;&#x8981;&#x52A0;<code>axis = 1</code> </strong></p>
-<h3 id="inplace&#x53C2;&#x6570;"><a name="inplace&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#inplace&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>inplace&#x53C2;&#x6570;</h3>
-<pre class="language-"><code class="lang-python"><span class="token number">1</span><span class="token punctuation">.</span> DF<span class="token operator">=</span> DF<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">&apos;column_name&apos;</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>&#xFF1B;
-<span class="token number">2</span><span class="token punctuation">.</span> DF<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token string">&apos;column_name&apos;</span><span class="token punctuation">,</span>axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-<span class="token number">3</span><span class="token punctuation">.</span> DF<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token punctuation">[</span>DF<span class="token punctuation">.</span>columns<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>   <span class="token comment"># Note: zero indexed</span>
+<p>&#x7ED3;&#x679C;&#xFF1A;</p>
+<center><a href="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200712140833.png" data-lightbox="c25ee991-9fc7-400d-bcab-91291e7c3214" data-title="image-20200711145148964" target="_blank"><img src="https://raw.githubusercontent.com/HG1227/image/master/img_tuchuang/20200712140833.png" alt="image-20200711145148964"></a></center>
+
+<pre class="language-"><code class="lang-python">allDf<span class="token punctuation">.</span>corr<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token string">&apos;x&apos;</span><span class="token punctuation">]</span>
 </code></pre>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x51E1;&#x662F;&#x4F1A;&#x5BF9;&#x539F;&#x6570;&#x7EC4;&#x4F5C;&#x51FA;&#x4FEE;&#x6539;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x65B0;&#x6570;&#x7EC4;&#x7684;&#xFF0C;&#x5F80;&#x5F80;&#x90FD;&#x6709;&#x4E00;&#x4E2A; inplace&#x53EF;&#x9009;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x624B;&#x52A8;&#x8BBE;&#x5B9A;&#x4E3A;True&#xFF08;&#x9ED8;&#x8BA4;&#x4E3A;False&#xFF09;&#xFF0C;&#x90A3;&#x4E48;&#x539F;&#x6570;&#x7EC4;&#x76F4;&#x63A5;&#x5C31;&#x88AB;&#x66FF;&#x6362;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x91C7;&#x7528; inplace=True &#x4E4B;&#x540E;&#xFF0C;&#x539F;&#x6570;&#x7EC4;&#x540D;&#xFF08;&#x5982;2&#x548C;3&#x60C5;&#x51B5;&#x6240;&#x793A;&#xFF09;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x5B58;&#x503C;&#x76F4;&#x63A5;&#x6539;&#x53D8;&#xFF1B;</p>
-<p>&#x800C;&#x91C7;&#x7528; inplace=False &#x4E4B;&#x540E;&#xFF0C;&#x539F;&#x6570;&#x7EC4;&#x540D;&#x5BF9;&#x5E94;&#x7684;&#x5185;&#x5B58;&#x503C;&#x5E76;&#x4E0D;&#x6539;&#x53D8;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x65B0;&#x7684;&#x7ED3;&#x679C;&#x8D4B;&#x7ED9;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x6570;&#x7EC4;&#x6216;&#x8005;&#x8986;&#x76D6;&#x539F;&#x6570;&#x7EC4;&#x7684;&#x5185;&#x5B58;&#x4F4D;&#x7F6E;&#xFF08;&#x5982;1&#x60C5;&#x51B5;&#x6240;&#x793A;&#xFF09;&#x3002;</p>
-<h3 id="&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><a name="&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h3>
-<pre class="language-"><code class="lang-python">df<span class="token punctuation">[</span><span class="token string">&apos;Name&apos;</span><span class="token punctuation">]</span> <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">&apos;Name&apos;</span><span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>datetime64<span class="token punctuation">)</span>
-</code></pre>
-<p><code>DataFrame.astype()</code>&#x65B9;&#x6CD5;&#x53EF;&#x5BF9;&#x6574;&#x4E2A; DataFrame &#x6216;&#x67D0;&#x4E00;&#x5217;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#xFF0C;&#x652F;&#x6301; Python &#x548C; NumPy &#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002; </p>
+<center><a href="img/image-20200711145222334.png" data-lightbox="f97a4353-cfca-4ff7-8740-beee7bda928e" data-title="image-20200711145222334"><img src="img/image-20200711145222334.png" alt="image-20200711145222334"></a></center>
+
+
+
+<h2 id="&#x53C2;&#x8003;"><a name="&#x53C2;&#x8003;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="https://blog.csdn.net/dss_dssssd/article/details/82811300" target="_blank">pandas &#x7EDF;&#x8BA1;&#x51FD;&#x6570;corr</a></li>
+<li><a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.corr.html?highlight=corr" target="_blank">pandas.DataFrame.corr</a> </li>
+</ul>
 <footer class="page-footer"><span class="copyright">  </span><span class="footer-modification">Update time&#xFF1A;
-2020-05-25 
+2020-07-12 
 </span></footer>
                                 
                                 </section>
@@ -1473,12 +1496,12 @@ df<span class="token punctuation">.</span>dropna<span class="token punctuation">
 
             
                 
-                <a href="Pandas 数据去重.html" class="navigation navigation-prev " aria-label="Previous page: Pandas 数据去重">
+                <a href="Pandas 描述和汇总统计.html" class="navigation navigation-prev " aria-label="Previous page: Pandas 描述和汇总统计">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="Pandas 唯一值，计数值.html" class="navigation navigation-next " aria-label="Next page: Pandas 唯一值，计数值">
+                <a href="Pandas 统计函数scatter_matrix.html" class="navigation navigation-next " aria-label="Next page: Pandas 统计函数scatter_matrix">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1489,7 +1512,7 @@ df<span class="token punctuation">.</span>dropna<span class="token punctuation">
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pandas drop函数","level":"3.1.32","depth":2,"next":{"title":"Pandas 唯一值，计数值","level":"3.1.33","depth":2,"path":"Chapter2/Pandas 唯一值，计数值.md","ref":"Chapter2/Pandas 唯一值，计数值.md","articles":[]},"previous":{"title":"Pandas 数据去重","level":"3.1.31","depth":2,"path":"Chapter2/Pandas 数据去重.md","ref":"Chapter2/Pandas 数据去重.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter2/Pandas drop函数.md","mtime":"2020-05-25T13:49:11.670Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T15:01:10.295Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pandas 统计函数corr","level":"3.1.13","depth":2,"next":{"title":"Pandas 统计函数scatter_matrix","level":"3.1.14","depth":2,"path":"Chapter2/Pandas 统计函数scatter_matrix.md","ref":"Chapter2/Pandas 统计函数scatter_matrix.md","articles":[]},"previous":{"title":"Pandas 描述和汇总统计","level":"3.1.12","depth":2,"path":"Chapter2/Pandas 描述和汇总统计.md","ref":"Chapter2/Pandas 描述和汇总统计.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","-search","-highlight","-livereload","search-plus@^0.0.11","simple-page-toc@^0.1.1","disqus@^0.1.0","prism@^2.1.0","prism-themes@^0.0.2","theme-comscore","anchors@^0.7.1","ace@^0.3.2","emphasize@^1.1.0","katex@^1.1.3","splitter@^0.0.8","expandable-chapters","local-video@^1.0.1","anchor-navigation-ex@0.1.8","custom-favicon","todo@^0.1.3","hide-element","copy-code-button","tbfed-pagefooter","advanced-emoji","lightbox","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":" ","modify_label":"Update time：","modify_format":"YYYY-MM-DD "},"prism":{"css":["prism-themes/themes/prism-vs.css"]},"disqus":{"useIdentifier":false,"shortName":"HG1227"},"styles":{"website":"styles/website.css"},"emphasize":{},"ace":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"todo":{},"splitter":{},"hide-element":{"elements":[".gitbook-link"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"anchor-navigation-ex":{"isRewritePageTitle":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right"},"favicon":"favicon.ico","lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"prism-themes":{},"custom-favicon":{},"local-video":{},"copy-code-button":{},"advanced-emoji":{"embedEmojis":false},"include-codeblock":{"template":"ace","unindent":true,"edit":true},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{},"search-plus":{}},"theme":"default","author":"HHG","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"readme.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"python 学习记录","language":"zh-hans","output.name":"site","links":{"sidebar":{"Home":""}},"gitbook":"*","description":"。"},"file":{"path":"Chapter2/Pandas 统计函数corr.md","mtime":"2020-07-12T06:11:25.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-04T15:01:10.295Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

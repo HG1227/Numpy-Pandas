@@ -13,27 +13,61 @@ pandas.Categorical(values,
 
 - values：类似列表。分类的值，如果给出了类别，则不在类别中的值将替换为NaN。
 - categories：索引式（唯一），可选。此分类的唯一类别。如果没有给出，则假定类别是值的唯一值。
-- ordered：布尔值，（默认为False）。此分类是否被视为有序分类。如果没有给出，则不会订购生成的分类。
+- ordered：布尔值，（默认为False）。这个分类是否被当作一个有序的分类。如果为True，产生的分类将是有序的。有序分类在排序时尊重其类别属性的顺序（如果提供了类别参数，则该属性也是类别参数
 - dtype：CategoricalDtype，CategoricalDtype用于此分类的实例
   
 
 示例
 
 ```python
-In [16]: st = ['a','a','b','c','c']
+import pandas as pd
+cat = pd.Categorical(['a', 'b', 'c', 'a', 'b', 'c'])
+cat
+```
 
-In [17]: ss = pd.Categorical(st)
-
-In [18]: ss
-Out[18]:
-[a, a, b, c, c]
-Categories (3, object): [a, b, c]
-
-In [22]: ss.dtype
-Out[22]: CategoricalDtype(categories=['a', 'b', 'c'], ordered=False)
-
+结果 ：
 
 ```
+[a, b, c, a, b, c]
+Categories (3, object): [a, b, c]
+```
+
+- 参数 `categories=`
+
+```python
+import pandas as pd
+cat = cat=pd.Categorical(['a','b','c','a','b','c','d'], 
+                         categories=['c', 'b', 'a'])
+print (cat)
+```
+
+结果
+
+```
+[a, b, c, a, b, c, NaN]
+Categories (3, object): [c, b, a]
+```
+
+在类别中不存在的任何值将被视为`NaN`
+
+- 参数 `ordered`
+
+```python
+import pandas as pd
+cat = cat=pd.Categorical(['a','b','c','a','b','c','d'], 
+                         categories=['c', 'b', 'a'],
+                         ordered=True)
+print (cat)
+```
+
+结果：
+
+```
+[a, b, c, a, b, c, NaN]
+Categories (3, object): [c < b < a]
+```
+
+从逻辑上讲，排序(*ordered*)意味着，`a`大于`b`，`b`大于`c`
 
 这里就可以看到 categorical 实际上是计算一个列表型数据中的类别数，即不重复项，它返回的是一个CategoricalDtype 类型的对象，相当于在原来数据上附加上类别信息
 
@@ -71,7 +105,9 @@ Categories (3, object): [c < b < a]
 
 
 
-参考：
+## 参考
 
-<a href="https://blog.csdn.net/Lq_520/article/details/83616673" blank="">pandas 中 pd.Categorical用法</a>
+- <a href="https://blog.csdn.net/Lq_520/article/details/83616673" blank="">pandas 中 pd.Categorical用法</a>
+- <a href="https://pandas.pydata.org/docs/reference/api/pandas.Categorical.html?highlight=categorical#pandas.Categorical"  target="_blank">pandas.Categorical</a> 
+- <a href="https://www.yiibai.com/pandas/python_pandas_categorical_data.html"  target="_blank">Pandas分类数据</a>  
 
