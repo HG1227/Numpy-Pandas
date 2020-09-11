@@ -428,6 +428,109 @@ In [61]: result = left.join(right, on='key')
 
 
 
+## 插入函数 `insert`
+
+```python
+DataFrame.insert(loc, column, value, allow_duplicates=False)
+```
+
+在指定**列**插入数据
+
+Raises a ValueError if column is already contained in the DataFrame, unless allow_duplicates is set to True.
+
+**Parameters**:
+
+- `loc` :  **int** 使用整数定义_列数据_插入的位置，必须是0到columns列标签的长度 Insertion index. Must verify 0 <= loc <= len(columns) 
+- **`column`** : string, **number**, **or** hashable object  # 可选字符串、数字或者object；列标签名 label **of** the inserted **column** 
+- **`value`** : **int**, Series, **or** array-**like** # 整数、Series或者数组型数据 
+- `allow_duplicates` : bool, optional  # 可选参数，如果dataframe中已经存在某列，将allow_duplicates置为**true**才可以将指定得列插入。
+
+###### 实例详解：
+
+```python
+import pandas as pd
+import numpy as np
+
+df = pd.DataFrame(np.arange(12).reshape(4,3)
+                  ,columns=['a','b','c'])
+```
+
+```python
+df
+
+	a	b	c
+0	0	1	2
+1	3	4	5
+2	6	7	8
+3	9	10	11
+```
+
+在第二列插入数据：
+
+```python
+df.insert(1,'d',np.ones(4))
+```
+
+
+
+```python
+df
+
+
+	a	d	b	c
+0	0	1.0	1	2
+1	3	1.0	4	5
+2	6	1.0	7	8
+3	9	1.0	10	11
+```
+如果没有设定 `allow_duplicates = True`，此时如果添加的列已经存在，则会报错：
+
+```python
+df.insert(1,'d',np.ones(4))
+
+---------------------------------------------------------------------------
+ValueError                                Traceback (most recent call last)
+<ipython-input-7-ee16a5e00623> in <module>
+----> 1 df.insert(1,'d',np.ones(4))
+
+D:\Application\Anaconda3\envs\pycharm\lib\site-packages\pandas\core\frame.py in insert(self, loc, column, value, allow_duplicates)
+   3494         self._ensure_valid_index(value)
+   3495         value = self._sanitize_column(column, value, broadcast=False)
+-> 3496         self._data.insert(loc, column, value, allow_duplicates=allow_duplicates)
+   3497 
+   3498     def assign(self, **kwargs) -> "DataFrame":
+
+D:\Application\Anaconda3\envs\pycharm\lib\site-packages\pandas\core\internals\managers.py in insert(self, loc, item, value, allow_duplicates)
+   1171         if not allow_duplicates and item in self.items:
+   1172             # Should this be a different kind of error??
+-> 1173             raise ValueError(f"cannot insert {item}, already exists")
+   1174 
+   1175         if not isinstance(loc, int):
+
+ValueError: cannot insert d, already exists
+
+
+```
+
+因此，如果是添加的列已经存在，如下处理：
+
+```python
+df.insert(1,'d',np.ones(4),allow_duplicates=True)  #allow_duplicates=True
+df
+
+
+	a	d	d	b	c
+0	0	1.0	1.0	1	2
+1	3	1.0	1.0	4	5
+2	6	1.0	1.0	7	8
+3	9	1.0	1.0	10	11
+
+```
+
+
+
+
+
 ## 参考
 
 <a href="https://blog.csdn.net/stevenkwong/article/details/52528616" blank="">PANDAS 数据合并与重塑</a> 

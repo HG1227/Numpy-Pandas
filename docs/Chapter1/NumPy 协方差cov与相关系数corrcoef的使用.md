@@ -53,6 +53,10 @@ numpy 的 cov 函数使用的三点：
 
 ![img](https://img-blog.csdnimg.cn/20190331173445960.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM5NTE0MDMz,size_16,color_FFFFFF,t_70)
 
+需要注意的是, `np.corrcoef() `接受的参数是一个矩阵,返回的结果也是一个矩阵
+
+
+
 ```python
 import numpy as np
  
